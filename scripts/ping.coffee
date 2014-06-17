@@ -27,5 +27,5 @@ module.exports = (robot) ->
   robot.hear /ぬるぽ/, (msg) ->
     msg.send "ガッ"
 
-  robot.hear /たけ/, (msg) ->
+  robot.respond /たけ/, (msg) ->
     msg.send "クラブ大好き"
