@@ -24,7 +24,6 @@ module.exports = (robot) ->
 #    msg.send "Goodbye, cruel world."
 #    process.exit 0
 
-module.exports = (robot) ->
   robot.hear /ぬるぽ/, (msg) ->
     msg.send "ガッ"
 
