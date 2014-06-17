@@ -158,3 +158,4 @@ if you're having issues.
 
 
 ## hubot 動いてよ！！！！
+Slack も動いてよ！！！
