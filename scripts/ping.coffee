@@ -23,11 +23,8 @@ module.exports = (robot) ->
 #  robot.respond /DIE$/i, (msg) ->
 #    msg.send "Goodbye, cruel world."
 #    process.exit 0
-
-module.exports = (robot) ->
-  robot.hear /ぬるぽ/, (msg) ->
+  robot.respond /ぬるぽ/, (msg) ->
     msg.send "ガッ"
 
-module.exports = (robot) ->
-  robot.hear /たけ/, (msg) ->
+  robot.respond /たけ/, (msg) ->
     msg.send "クラブ大好き"
