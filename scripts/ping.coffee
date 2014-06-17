@@ -24,3 +24,15 @@ module.exports = (robot) ->
 #    msg.send "Goodbye, cruel world."
 #    process.exit 0
 
+module.exports = (robot) ->
+robot.hear /ぬるぽ/, (msg) ->
+  msg.send '''
+
+   Λ＿Λ    ＼＼
+  （ ・∀・）   | | ｶﾞｯ
+ と       ）   | |
+   Ｙ /ノ     人
+    / ）     <  >  _Λ∩
+ ＿/し' ／／  Ｖ｀Д´）/
+ （＿フ彡            / ←>>1
+'''
