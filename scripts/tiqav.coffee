@@ -30,4 +30,4 @@ tiqavApi = (msg, query, cb) ->
       images = JSON.parse(body)
       if images?.length > 0
         image  = msg.random images
-        cb image.source_url
+        cb "http://tiqav.com/#{image.id}.#{image.ext}"
