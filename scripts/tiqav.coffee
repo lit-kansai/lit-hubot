@@ -17,7 +17,7 @@ module.exports = (robot) ->
   robot.hear /^ちくわ(@\S+) (.*)$/i, (msg) ->
     tiqavApi msg, msg.match[2], (url) ->
       msg.send "#{msg.match[1]} #{url}"
-    msg.send 
+    msg.send
   robot.respond /tiqav (@\S+ )?(.*)/i, (msg) ->
     tiqavApi msg, msg.match[2], (url) ->
       msg.send msg.match[1]+url
