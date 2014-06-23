@@ -35,7 +35,7 @@ module.exports = (robot) ->
     ]
     msg.send suddendeath.join "\n"
 
-  robot.respond /突然の(.*)$/i, (msg) ->
+  robot.hear /突然の(.*)$/i, (msg) ->
     message = msg.match[1].replace /^\s+|\s+$/g, ''
     return until message.length
 
