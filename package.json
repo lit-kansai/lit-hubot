@@ -26,7 +26,8 @@
     "hubot-slack": "^2.1.0",
     "grunt": "^0.4.5",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-coffeelint": "0.0.10"
+    "grunt-coffeelint": "0.0.10",
+    "eastasianwidth": "~0.1.0"
   },
   "engines": {
     "node": ">= 0.8.x",
