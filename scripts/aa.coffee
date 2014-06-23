@@ -10,7 +10,7 @@
 
 eastasianwidth = require 'eastasianwidth'
 
-module.exports = (robot) ->
+module.exports = (robot) -> 
   robot.respond /(fresh|FRESH)(.*)$/i, (msg) ->
     patterns = [
       "(*◔ڼ◔)",
