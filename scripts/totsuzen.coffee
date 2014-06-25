@@ -25,25 +25,18 @@ module.exports = (robot) ->
   robot.respond />< (.*)$/i, (msg) ->
     message = msg.match[1].replace /^\s+|\s+$/g, ''
     return until message.length
-
-    length = Math.floor eastasianwidth.length(message) / 2
-
-    suddendeath = [
-      "＿#{strpad '人', length + 2}＿"
-      "＞　#{message}　＜"
-      "￣Y#{strpad '^Y', length}￣"
-    ]
-    msg.send suddendeath.join "\n"
+    msg.send sudden_death(message)
 
   robot.hear /突然の(.*)$/i, (msg) ->
-    message = msg.match[1].replace /^\s+|\s+$/g, ''
+    message = "突然の"+msg.match[1].replace /^\s+|\s+$/g, ''
     return until message.length
+    msg.send sudden_death(message)
 
+sudden_death = (message) ->
     length = Math.floor eastasianwidth.length(message) / 2
+    return "
+＿#{strpad '人',  length + 2}＿\n
+＞　#{message}　＜\n
+￣Y#{strpad '^Y',  length}￣
+"
 
-    suddendeath = [
-      "＿#{strpad '人', length + 2}＿"
-      "＞　突然の#{message}　＜"
-      "￣Y#{strpad '^Y', length}￣"
-    ]
-    msg.send suddendeath.join "\n"
