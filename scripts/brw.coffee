@@ -7,7 +7,7 @@
 
 module.exports = (robot) ->
   robot.brain.data.brw ?= {}
-  robot.respond /brw (@\S+) (.+)$/i, (msg) ->
+  robot.respond /brw (\S+) (.+)$/i, (msg) ->
     id = msg.message.user.id
     me = msg.message.user.name
     you = msg.match[1]
@@ -30,8 +30,10 @@ module.exports = (robot) ->
       robot.brain.save()
       msg.send "#{msg.message.user.name} returned #{obj.thing} to #{obj.you}"
   robot.respond /wib$/, (msg) ->
-    response = robot.brain.data.brw[msg.message.user.id].map (item) ->
+    response = "#{msg.message.user.name} is borrowing below"
+    response += robot.brain.data.brw[msg.message.user.id].map (item) ->
       not item.ret
     .reduce (prev, curr) ->
-      prev + "id : #{curr.id}, #{curr.thing} from #{curr.you} \n"
+      prev + "  id : #{curr.id}, #{curr.thing} from #{curr.you} \n"
     , ''
+    msg.send response
