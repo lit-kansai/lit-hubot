@@ -7,8 +7,16 @@ module.exports = (robot) ->
   robot.hear /ぬるぽ/, (msg) ->
     msg.send "ガッ"
 
+  robot.respond /save たけ(は)?(.+)$/, (msg) ->
+    robot.brain.data.take_is = msg.match[2]
+    robot.brain.save
+    msg.send robot.brain.data.take_is
+
   robot.respond /たけ/, (msg) ->
-    msg.send "クラブ大好き"
+    if robot.brain.data.take_is
+      msg.send robot.brain.data.take_is
+    else
+      msg.send "クラブ大好き"
 
   robot.hear /よっさん/, (msg) ->
     msg.send "クラブ行きてえ"
