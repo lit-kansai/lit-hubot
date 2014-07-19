@@ -21,8 +21,11 @@ module.exports = (robot) ->
  # robot.hear /よっさん/, (msg) ->
  #   msg.send "クラブ行きてえ"
 
- # robot.respond /ひろきゅん/, (msg) ->
- #   msg.send "レガシーだね"
+  robot.respond /しょーさま/, (msg) ->
+    msg.send "ジーニアスですけど"
+
+  robot.respond /ひろきゅん/, (msg) ->
+    msg.send "レガシーだね"
 
  # robot.respond /Yes/, (msg) ->
  #   msg.send "高須クリニック"
