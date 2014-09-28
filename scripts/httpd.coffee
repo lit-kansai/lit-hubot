@@ -11,6 +11,7 @@
 #   None
 #
 # URLS:
+#   /hubot/say?channel={channel}&message={message}
 #   /hubot/version
 #   /hubot/ping
 #   /hubot/time
@@ -18,8 +19,18 @@
 #   /hubot/ip
 
 spawn = require('child_process').spawn
+url = require('url')
+querystring = require('querystring')
 
 module.exports = (robot) ->
+
+  robot.router.get "/hubot/say", (req, res) ->
+    query = querystring.parse(url.parse(req.url).query)
+    try
+      robot.messageRoom "#"+query.channel, query.message
+      res.end "Posted. channel:##{query.channel} messsage:#{query.message}"
+    catch error
+      res.end "Error: #{error}"
 
   robot.router.get "/hubot/version", (req, res) ->
     res.end robot.version
