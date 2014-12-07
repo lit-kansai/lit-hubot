@@ -29,3 +29,8 @@ module.exports = (robot) ->
 
  # robot.respond /Yes/, (msg) ->
  #   msg.send "高須クリニック"
+  robot.respond /えんか/, (msg) ->
+    msg.send "なるほど?"
+
+  robot.respond /りょーちん/, (msg) ->
+    msg.send "わりとヤバイ"
